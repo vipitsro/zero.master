@@ -72,7 +72,15 @@ class SiteController extends MainController
     {
         return $this->render('about');
     }
-    
+
+
+    public function actionPhpinfo() {
+        phpinfo();
+        exit;
+    }
+
+
+
     public function actionFlushCache(){
         Yii::$app->cache->flush();
     }

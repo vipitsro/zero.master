@@ -131,6 +131,7 @@ use yii\bootstrap\Nav;
         </ul>
         
         <?php
+        echo '<p style="color:silver;padding: 10px;">Current PHP version: ' . phpversion().'</p>';
         /*
         <ul class="sidebar-menu">
             <li class="treeview">
