@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>287</MsgId>
+			<CreDtTm>2019-12-23T14:58:52.000</CreDtTm>
+			<Authstn>
+				<Prtry>BATCH</Prtry>
+			</Authstn>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>29413.03</CtrlSum>
+			<InitgPty>
+				<Nm>Printline</Nm>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>"PMTID-"2019-12-23T14:58:52.000</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<PmtTpInf>
+				<InstrPrty>NORM</InstrPrty>
+				<SvcLvl>
+					<Cd>SEPA</Cd>
+				</SvcLvl>
+			</PmtTpInf>
+			<ReqdExctnDt>2019-12-23</ReqdExctnDt>
+			<Dbtr>
+				<Nm>Printline</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>SK1911000000002628030474</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>TATRSKBX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<ChrgBr>SLEV</ChrgBr>
+			
+		<CdtTrfTxInf><PmtId><EndToEndId>/VS1910035/SS2519645/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">3120.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>CROSS CONSULT sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4011000000002923835961</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS9119134/SS2519642/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">7752.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>P78 sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2211000000002924849062</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1100002019/SS2919074/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1440.53</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SPSRSKBA</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Daov rad Bratislava III  da z prijmu PO</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5481805002248028010645</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS2019132/SS2519641/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">110.56</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>OPack sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK1311000000002621802697</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf>
+				<PmtId>
+					<EndToEndId>/VS6794190000/SS2519646/KS0308</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">611.38</InstdAmt>
+				</Amt>
+				<ChrgBr>SLEV</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC>UNCRSKBX</BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>SCP Papier as</Nm>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>SK4611110000001023397009</IBAN>
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Ustrd></Ustrd>
+				</RmtInf>
+				</CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS811987/SS2519640/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">2220.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>JensLitwak sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7211000000002926908927</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1100112019/SS2919073/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1323.84</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SPSRSKBA</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Daov urad Bratislava III  DPH</Nm></Cdtr><CdtrAcct><Id><IBAN>SK3281805002408028010645</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1915235/SS2519639/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">66.72</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>COPY PRINT GROUP as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK6911110000001346325018</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS7119032/SS2519644/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">9590.40</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Printline digital sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2411000000002946041101</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS190885/SS2519638/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">57.60</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>GIBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>AP Service sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2209000000000172362593</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS132019/SS2519643/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">2300.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ROBERT Honz  polygrafick vroba</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4711000000002626834057</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS20190020/SS2519637/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">820.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>BREXSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Jaroslav illo</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7083605207004206792590</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf></PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>

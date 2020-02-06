@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>199</MsgId>
+			<CreDtTm>2018-10-10T09:40:00.000</CreDtTm>
+			<Authstn>
+				<Prtry>BATCH</Prtry>
+			</Authstn>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>2159.79</CtrlSum>
+			<InitgPty>
+				<Nm>Printline</Nm>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>"PMTID-"2018-10-10T09:40:00.000</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<PmtTpInf>
+				<InstrPrty>NORM</InstrPrty>
+				<SvcLvl>
+					<Cd>SEPA</Cd>
+				</SvcLvl>
+			</PmtTpInf>
+			<ReqdExctnDt>2018-10-10</ReqdExctnDt>
+			<Dbtr>
+				<Nm>Printline</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>SK1911000000002628030474</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>TATRSKBX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<ChrgBr>SLEV</ChrgBr>
+			
+		<CdtTrfTxInf><PmtId><EndToEndId>/VS3100180795/SS2518427/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">279.01</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>KOMBSKBA</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>EUROPAPIER  SLOVAKIA spol  s ro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5381000001076901760207</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS120181265/SS2518454/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">13.68</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>GRAFITEC SLOVAKIA GROUP s ro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK8411000000002925863245</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf>
+				<PmtId>
+					<EndToEndId>/VS18001807/SS2618041/KS0308</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">102.50</InstdAmt>
+				</Amt>
+				<ChrgBr>SLEV</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC>UNCRSKBX</BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>KBA CEE Sp z oo</Nm>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>SK6911110000001123303006</IBAN>
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Ustrd></Ustrd>
+				</RmtInf>
+				</CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS180100235/SS2518458/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1033.20</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>CEKOSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>PNC sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2875000000004011647166</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS5735180000/SS2518449/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">84.02</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>SCP Papier as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4611110000001023397009</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS180010173/SS2518464/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">57.60</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>UNIQUE PACK sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7711000000002621836950</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS672018/SS2518460/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">36.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>LUBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Vladimr Bio</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4031000000004110114402</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS180100118/SS2518465/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">69.60</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SUBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>printech sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK6002000000002445395251</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1803390/SS2518450/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">21.60</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>GIBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Typografia plus sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK3909000000000179242885</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1405757128/SS2518475/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">30.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>SPANDEX sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4011000000002622020267</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS18001808/SS2618040/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">130.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>KBA CEE Sp z oo</Nm></Cdtr><CdtrAcct><Id><IBAN>SK6911110000001123303006</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1405757127/SS2518476/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">30.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>SPANDEX sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4011000000002622020267</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS7700406960/SS2518453/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">104.98</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ANTALIS as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2911110000001021225000</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1813788/SS2518467/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">167.60</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>COPY PRINT GROUP as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK6911110000001346325018</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf></PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>

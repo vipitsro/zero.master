@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>5</MsgId>
+			<CreDtTm>2016-01-29T00:43:12.000</CreDtTm>
+			<Authstn>
+				<Prtry>BATCH</Prtry>
+			</Authstn>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>1675.48</CtrlSum>
+			<InitgPty>
+				<Nm>Printline</Nm>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>"PMTID-"2016-01-29T00:43:12.000</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<PmtTpInf>
+				<InstrPrty>NORM</InstrPrty>
+				<SvcLvl>
+					<Cd>SEPA</Cd>
+				</SvcLvl>
+			</PmtTpInf>
+			<ReqdExctnDt>2016-01-29</ReqdExctnDt>
+			<Dbtr>
+				<Nm>Printline</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>SK1911000000002628030474</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>TATRSKBX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<ChrgBr>SLEV</ChrgBr>
+			
+		<CdtTrfTxInf>
+				<PmtId>
+					<EndToEndId>/VS2216013/SS2516009/KS0308</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">87.72</InstdAmt>
+				</Amt>
+				<ChrgBr>SLEV</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC></BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>UNILAK SK, s.r.o.</Nm>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>SK48 7500 0000 0003 1198 9303</IBAN>
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Ustrd></Ustrd>
+				</RmtInf>
+				</CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS32460000/SS2516007/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">707.40</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC></BIC></FinInstnId></CdtrAgt><Cdtr><Nm>SCP Papier a.s.</Nm></Cdtr><CdtrAcct><Id><IBAN>SK46 1111 0000 0010 2339 7009</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS112016/SS2516008/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">199.20</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC></BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Ing. Ladislav Zedek</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4802000000001153548012</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS3100110867/SS2516006/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">681.16</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC></BIC></FinInstnId></CdtrAgt><Cdtr><Nm>EUROPAPIER - SLOVAKIA, spol.  s r.o.</Nm></Cdtr><CdtrAcct><Id><IBAN>SK93 1111 0000 0010 0305 5263</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf></PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>

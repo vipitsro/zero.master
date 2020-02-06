@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>276</MsgId>
+			<CreDtTm>2019-11-11T17:24:09.000</CreDtTm>
+			<Authstn>
+				<Prtry>BATCH</Prtry>
+			</Authstn>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>12327.49</CtrlSum>
+			<InitgPty>
+				<Nm>Printline</Nm>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>"PMTID-"2019-11-11T17:24:09.000</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<PmtTpInf>
+				<InstrPrty>NORM</InstrPrty>
+				<SvcLvl>
+					<Cd>SEPA</Cd>
+				</SvcLvl>
+			</PmtTpInf>
+			<ReqdExctnDt>2019-11-11</ReqdExctnDt>
+			<Dbtr>
+				<Nm>Printline</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>SK1911000000002628030474</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>TATRSKBX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<ChrgBr>SLEV</ChrgBr>
+			
+		<CdtTrfTxInf><PmtId><EndToEndId>/VS290488/SS2519555/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">3277.38</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>BSLOSK22</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Vargem sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK9481200000008670811060</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS2019162/SS2519544/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">924.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>DS Investment sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK1811000000002624835021</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS2019101/SS2519554/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">216.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>CEKOSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>MM autocentrum sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK1775000000004006510050</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf>
+				<PmtId>
+					<EndToEndId>/VS1019029/SS2519548/KS0308</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">1500.00</InstdAmt>
+				</Amt>
+				<ChrgBr>SLEV</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC>LUBASKBX</BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>Fenixis s ro</Nm>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>SK3831000000004280104901</IBAN>
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Ustrd></Ustrd>
+				</RmtInf>
+				</CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS190100279/SS2519553/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">215.11</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>CEKOSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>LUGAS SK sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4475000000004020291421</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS102019/SS2519543/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1300.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ROBERT Honz  polygrafick vroba</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4711000000002626834057</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS519476/SS2519552/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">101.38</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ALEDETO SLOVAKIA spol s ro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK3411000000002928708961</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS102019/SS2519546/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1500.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Lucia Palkoviov  polygrafick vroba</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4311000000002610809244</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS71903507/SS2519551/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">43.39</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>GO4 sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5811000000002626742582</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS01909/SS2519556/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1760.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>BREXSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Juraj Labaj  WLK</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5483605207004201136420</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS8193474232/SS2519550/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">250.63</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>SCHENKER sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7811000000002627310060</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS20190017/SS2519547/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1200.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>BREXSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Jaroslav illo</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7083605207004206792590</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1910038/SS2519549/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">39.60</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>CAREXPRESS sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK8511000000002925898632</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf></PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>

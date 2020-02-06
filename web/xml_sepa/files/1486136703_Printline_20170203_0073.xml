@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>73</MsgId>
+			<CreDtTm>2017-02-03T16:45:03.000</CreDtTm>
+			<Authstn>
+				<Prtry>BATCH</Prtry>
+			</Authstn>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>17186.91</CtrlSum>
+			<InitgPty>
+				<Nm>Printline</Nm>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>"PMTID-"2017-02-03T16:45:03.000</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<PmtTpInf>
+				<InstrPrty>NORM</InstrPrty>
+				<SvcLvl>
+					<Cd>SEPA</Cd>
+				</SvcLvl>
+			</PmtTpInf>
+			<ReqdExctnDt>2017-02-03</ReqdExctnDt>
+			<Dbtr>
+				<Nm>Printline</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>SK1911000000002628030474</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>TATRSKBX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<ChrgBr>SLEV</ChrgBr>
+			
+		<CdtTrfTxInf><PmtId><EndToEndId>/VS7131602187/SS2517047/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">182.38</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SUBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>LOGART sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK3902000000001954649155</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS000083207/SS2517051/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">268.20</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ARGUSS sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK3511000000002624252715</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1700050/SS2517046/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">26.16</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>CEKOSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Nstroje HORVTH sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK6675000000004020215656</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS9117010/SS2517049/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">4829.40</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>P78 sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2211000000002924849062</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS012017/SS2517045/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">1500.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Lucia Palkoviov  polygrafick vroba</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4311000000002610809244</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf>
+				<PmtId>
+					<EndToEndId>/VS9117009/SS2517053/KS0308</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">2650.54</InstdAmt>
+				</Amt>
+				<ChrgBr>SLEV</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC>TATRSKBX</BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>P78 sro</Nm>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>SK2211000000002924849062</IBAN>
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Ustrd></Ustrd>
+				</RmtInf>
+				</CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS7700341365/SS2517044/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">950.58</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ANTALIS as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2911110000001021225000</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS20170267/SS2517048/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">27.65</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>DECS CONSULTING spol s ro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK2511000000002625704015</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS20170006/SS2517043/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">732.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SUBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>LMT obaly sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK9602000000002663988856</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS811701/SS2517050/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">4020.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>TARGEN SK sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7211000000002926908927</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS12017/SS2517052/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">2000.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>GIBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Erik Franko</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4209000000000331819272</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf></PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>

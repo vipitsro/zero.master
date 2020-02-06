@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03" xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03 pain.001.001.03.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>277</MsgId>
+			<CreDtTm>2019-11-15T15:29:00.000</CreDtTm>
+			<Authstn>
+				<Prtry>BATCH</Prtry>
+			</Authstn>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>8332.05</CtrlSum>
+			<InitgPty>
+				<Nm>Printline</Nm>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>"PMTID-"2019-11-15T15:29:00.000</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<PmtTpInf>
+				<InstrPrty>NORM</InstrPrty>
+				<SvcLvl>
+					<Cd>SEPA</Cd>
+				</SvcLvl>
+			</PmtTpInf>
+			<ReqdExctnDt>2019-11-15</ReqdExctnDt>
+			<Dbtr>
+				<Nm>Printline</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>SK1911000000002628030474</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<BIC>TATRSKBX</BIC>
+				</FinInstnId>
+			</DbtrAgt>
+			<ChrgBr>SLEV</ChrgBr>
+			
+		<CdtTrfTxInf><PmtId><EndToEndId>/VS1002277078/SS2919065/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">35.94</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SPSRSKBA</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Socialna poistovna </Nm></Cdtr><CdtrAcct><Id><IBAN>SK9181800000007000155733</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS3120194472/SS2519563/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">162.23</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>CEKOSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Marius Pedersen as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK7075000000000025818343</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS3636149600/SS2919064/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">14.56</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SPSRSKBA</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Dvera</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5281800000007000747747</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS20190617/SS2519562/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">88.54</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ALP propagan servis sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5011110000006629519018</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS36361496/SS2919066/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">90.08</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>KOMASK2X</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>Duan Bui</Nm></Cdtr><CdtrAcct><Id><IBAN>SK6956000000002314860002</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS519484/SS2519561/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">706.22</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>TATRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ALEDETO SLOVAKIA spol s ro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK3411000000002928708961</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf>
+				<PmtId>
+					<EndToEndId>/VS7111896110/SS2519557/KS0308</EndToEndId>
+				</PmtId>
+				<Amt>
+					<InstdAmt Ccy="EUR">1152.14</InstdAmt>
+				</Amt>
+				<ChrgBr>SLEV</ChrgBr>
+				<CdtrAgt>
+					<FinInstnId>
+						<BIC>TATRSKBX</BIC>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>ZSE Energia as</Nm>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>SK7211000000002649000047</IBAN>
+					</Id>
+				</CdtrAcct>
+				<RmtInf>
+					<Ustrd></Ustrd>
+				</RmtInf>
+				</CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS500190210/SS2519560/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">5397.84</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>UNCRSKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>SCP Papier as</Nm></Cdtr><CdtrAcct><Id><IBAN>SK4611110000001023397009</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS201960109/SS2519558/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">100.00</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>SUBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>ESET spol s ro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK9302000000001421047012</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf><CdtTrfTxInf><PmtId><EndToEndId>/VS1883604514/SS2519559/KS0308</EndToEndId></PmtId><Amt><InstdAmt Ccy="EUR">584.50</InstdAmt></Amt><ChrgBr>SLEV</ChrgBr><CdtrAgt><FinInstnId><BIC>COBASKBX</BIC></FinInstnId></CdtrAgt><Cdtr><Nm>HEIDELBERG Slovensko sro</Nm></Cdtr><CdtrAcct><Id><IBAN>SK5380500000000070100939</IBAN></Id></CdtrAcct><RmtInf><Ustrd></Ustrd></RmtInf></CdtTrfTxInf></PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>
