@@ -157,7 +157,7 @@ require_once $__dir . '/HTMLPurifier/HTMLModule/List.php';
 require_once $__dir . '/HTMLPurifier/HTMLModule/Name.php';
 require_once $__dir . '/HTMLPurifier/HTMLModule/Nofollow.php';
 require_once $__dir . '/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php';
-require_once $__dir . '/HTMLPurifier/HTMLModule/Object.php';
+require_once $__dir . '/HTMLPurifier/HTMLModule/BaseObject.php';
 require_once $__dir . '/HTMLPurifier/HTMLModule/Presentation.php';
 require_once $__dir . '/HTMLPurifier/HTMLModule/Proprietary.php';
 require_once $__dir . '/HTMLPurifier/HTMLModule/Ruby.php';
