@@ -31,7 +31,7 @@ if (Yii::$app->controller->action->id === 'login') {
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
-        <title><?= $all_settings[array_search('SITE_NAME', array_column($all_settings, 'setting'))]['value'] ?> - <?= Html::encode($this->title) ?></title>
+        <title>ZERO - <?= $all_settings[array_search('COMPANY_NAME', array_column($all_settings, 'setting'))]['value'] ?> - <?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
     <body class="skin-blue sidebar-mini">

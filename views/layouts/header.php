@@ -10,17 +10,7 @@ use yii\bootstrap\NavBar;
 
 <header class="main-header">
 
-    <?= Html::a(
-            '<span class="logo-mini">' .
-                $all_settings[array_search('SITE_NAME_ABBR', array_column($all_settings, 'setting'))]['value'] .
-            '</span>' .
-            '<span class="logo-lg">' . 
-                $all_settings[array_search('SITE_NAME', array_column($all_settings, 'setting'))]['value'] . " - " . $all_settings[array_search('COMPANY_NAME', array_column($all_settings, 'setting'))]['value'] . 
-            '</span>', 
-        ['/invoice/index'], 
-        ['class' => 'logo']
-        ) 
-    ?>
+
     <?php // Html::a('<span class="logo-mini">PRLN</span><span class="logo-lg">' . Yii::$app->params['settings']['SITE_NAME'] . '</span>', ['/site/index'], ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
