@@ -407,8 +407,8 @@ $this->registerJs("
 if (!$model->isNewRecord){
     $this->registerJs("
     
-        $('#invoice-currency').attr('readonly', true);
-        $('#invoice-currency option:not(:selected)').prop('disabled', true);
+        //$('#invoice-currency').attr('readonly', true);
+        //$('#invoice-currency option:not(:selected)').prop('disabled', true);
         
     ");
 }
