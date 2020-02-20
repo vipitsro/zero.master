@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             
             ?>
             <?= $form->field($searchModel, 'supp')->dropDownList(
-                    [-1 => ""]+
+                    [-1 => "Všetci"]+
                     ["TOP" => \yii\helpers\ArrayHelper::map($suppliers_best, "id", "name"), "OTHER" => \yii\helpers\ArrayHelper::map($suppliers_other, "id", "name")], 
                 ['onchange' => 'update();']) ?>
         </div>  
