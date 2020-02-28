@@ -5,6 +5,8 @@ use yii\widgets\ActiveForm;
 use yii\jui\DatePicker;
 use yii\helpers\Url;
 use app\components\CustomDatePicker\CustomDatePicker;
+use yii\base\DynamicModel;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Blocky */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,46 +14,46 @@ use app\components\CustomDatePicker\CustomDatePicker;
 
 <div class="blocky-form">
 
-    <?php $form = ActiveForm::begin([ "options" => ["id" => 'blocky-form', 'enctype' => 'multipart/form-data']]); ?>
+    <?php $form = ActiveForm::begin(["options" => ["id" => 'blocky-form', 'enctype' => 'multipart/form-data']]); ?>
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'sumabez')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'sumabez')->input('number', ['step' => '0.01']) ?>
 
-    <?= $form->field($model, 'dph')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'dph')->input('number', ['step' => '0.01']) ?>
 
     <?= $form->field($model, 'sumasdph')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'ucel')->textInput() ?>
+<?= $form->field($model, 'ucel')->textInput() ?>
 
 
 
-    <?= $form->field($model, 'datum')->widget(CustomDatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy', "isRTL" => true]); ?>
+<?= $form->field($model, 'datum')->widget(CustomDatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy', "isRTL" => true]); ?>
 
     <!--<?= $form->field($model, 'added')->textInput() ?>-->
 
     <!--<?= $form->field($model, 'status')->textInput() ?>-->
 
-         <br/>
-        <div class="form-group">
-		<div class="input-group input-file" name="Blocky[file]">
-    		<input type="text" class="form-control" style='position: static;' placeholder='Vybrať súbor ...' />			
+    <br/>
+    <div class="form-group">
+        <div class="input-group input-file" name="Blocky[file]">
+            <input type="text" class="form-control" style='position: static;' placeholder='Vybrať súbor ...' />			
             <span class="input-group-btn">
-        		<button class="btn btn-default btn-choose" type="button">Vybrať súbor</button>
-    		</span>
+                <button class="btn btn-default btn-choose" type="button">Vybrať súbor</button>
+            </span>
 
 
-		</div>
-	</div>
+        </div>
+    </div>
 
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('supplier_foreign', 'Pridať') : Yii::t('supplier_foreign', 'Upraviť'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+<?= Html::submitButton($model->isNewRecord ? Yii::t('supplier_foreign', 'Pridať') : Yii::t('supplier_foreign', 'Upraviť'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'id' => 'submit-button']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-    <?php if ($model->file != ""):?>
-    <iframe id="fred" style="border:1px solid #666CCC" title="PDF in an i-Frame" src="<?= Url::to('@web/uploads/blocky/' . $model->file, true) ?>" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe>
-    <?php endif;?>
+    <?php if ($model->file != ""): ?>
+        <iframe id="fred" style="border:1px solid #666CCC" title="PDF in an i-Frame" src="<?= Url::to('@web/uploads/blocky/' . $model->file, true) ?>" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe>
+<?php endif; ?>
     <div id="dialog-confirm" title="Sumy" hidden>
         <p>Sumy sa nezhodujú. Chcete pokračovať ?</p>
     </div>
@@ -101,5 +103,51 @@ $this->registerJs("
 	$(function() {
 		bs_input_file();
 	});	
+ 
+    $('#blocky-sumabez, #blocky-dph').on('input', function(){
+        var _price = $('#blocky-sumabez').val();
+        var _price_vat = $('#blocky-dph').val();
+        var _res1 = (parseFloat(_price) + parseFloat(_price_vat)).toFixed(2); // SCITANA
+        var _res2 = (parseFloat(_price) + parseFloat(_price*0.2)).toFixed(2); // VYPOCITANA PRI 20% DPH
+        $('#blocky-sumasdph').val(_res1);
+        if (_res1 == _res2){
+            $('#blocky-sumasdph').css('borderColor', '#8f8');
+        } else {
+            $('#blocky-sumasdph').css('borderColor', '#f88');
+        }
+    });
     
+    $('#blocky-form #submit-button').click(function(event){
+        event.preventDefault();
+        var _price = $('#blocky-sumabez').val();
+        var _price_vat = $('#blocky-dph').val();
+        var _res1 = (parseFloat(_price) + parseFloat(_price_vat)).toFixed(2); // SCITANA
+        var _res2 = (parseFloat(_price) + parseFloat(_price*0.2)).toFixed(2); // VYPOCITANA PRI 20% DPH
+//        $('#blocky-sumasdph').val(_res1);
+        if (_res1 != _res2){
+            $( '#dialog-confirm' ).dialog({
+                resizable: false,
+                height:200,
+                open: function(){
+                    $('.ui-dialog-titlebar-close').hide();
+                },
+                buttons: {
+                    'Áno': function() {
+                        $('#blocky-form').submit();
+                        $( this ).dialog( 'close' );
+                    },
+                    'Nie': function() {
+                        
+                        $( this ).dialog( 'close' );
+                        
+                    }
+                }
+            });
+        } else {
+            $('#blocky-form').submit();
+        }
+    });
+
+
+
 ");
