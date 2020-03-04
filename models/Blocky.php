@@ -12,6 +12,7 @@ use Yii;
  * @property string $dph
  * @property string $sumasdph
  * @property integer $ucel
+ * @property string $dodavatel
  * @property string $file
  * @property string $datum
  * @property string $added
@@ -19,6 +20,7 @@ use Yii;
  */
 class Blocky extends \yii\db\ActiveRecord
 {
+    
     /**
      * @inheritdoc
      */
@@ -33,8 +35,7 @@ class Blocky extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sumabez', 'dph', 'sumasdph', 'ucel', 'file', 'datum'], 'required'],
-            [['sumabez', 'dph', 'sumasdph'], 'number'],
+            [['sumabez', 'dph', 'sumasdph', 'ucel', 'datum', 'dodavatel', 'intnum'], 'required'],
             [['status'], 'integer'],
             [['file'], 'string'],
             [['datum', 'added'], 'safe'],
@@ -52,6 +53,12 @@ class Blocky extends \yii\db\ActiveRecord
 
     }    
     
+    public function generateInternalId()
+    {
+
+        return true;
+
+    }       
     
     /**
      * @inheritdoc
@@ -60,9 +67,11 @@ class Blocky extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('blocky', 'ID'),
+            'intnum'  => Yii::t('blocky', 'Interné číslo'),
             'sumabez' => Yii::t('blocky', 'Sumabez'),
             'dph' => Yii::t('blocky', 'Dph'),
             'sumasdph' => Yii::t('blocky', 'Sumasdph'),
+            'dodavatel' => Yii::t('blocky', 'Dodávateľ'),
             'ucel' => Yii::t('blocky', 'Ucel'),
             'file' => Yii::t('blocky', 'File'),
             'datum' => Yii::t('blocky', 'Datum'),

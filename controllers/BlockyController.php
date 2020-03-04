@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use app\models\MainModel;
+use app\models\Settings;
 
 /**
  * BlockyController implements the CRUD actions for Blocky model.
@@ -36,8 +37,9 @@ class BlockyController extends MainController {
      */
     public function actionIndex() {
         $searchModel = new BlockySearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        //$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $searchModel->load(Yii::$app->request->get());
+        $dataProvider = $searchModel->searchText(Yii::$app->request->get());
         return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
@@ -61,10 +63,19 @@ class BlockyController extends MainController {
      * @return mixed
      */
     public function actionCreate() {
+        Yii::$app->cache->flush();
         $model = new Blocky();
-
+        $system = new Settings();
         if ($model->load(Yii::$app->request->post())) {
+            $x = $system->findOne(["setting" => "COMPANY_ID"])->value;
+            $counter = Yii::$app->db->createCommand('SELECT count(*) as pocet FROM blocky where YEAR(added) ='.date("Y").'')->queryOne();
+            $counter["pocet"]+=1;
+            $counter["pocet"] = sprintf("%03d", $counter["pocet"]);
+            
+            $model->intnum = $x . "4" . date("y") . "-".$counter["pocet"];
+
             $model->file = UploadedFile::getInstance($model, 'file');
+
             $filenameToSave = "";
             if ($model->file) {
                 $filenameToSave = $model->file->baseName . '_' . time();
@@ -98,10 +109,10 @@ class BlockyController extends MainController {
     public function actionUpdate($id) {
         $model = $this->findModel($id);
         $oldfilename = $model->file;
-
+        $newfile = UploadedFile::getInstance($model, 'file')->name;
 
         if ($model->load(Yii::$app->request->post())) {
-            if (!is_null($model->file)) {
+            if (!is_null($newfile)) {
                 $model->file = UploadedFile::getInstance($model, 'file');
 
                 $filenameToSave = "";
@@ -118,8 +129,10 @@ class BlockyController extends MainController {
             }
 
             if ($model->save()) {
+
                 return $this->redirect(['index']);
             } else {
+
                 $model->file = $oldfilename;
                 $model->save();
                 return $this->redirect(['index']);
@@ -142,7 +155,9 @@ class BlockyController extends MainController {
      * @return mixed
      */
     public function actionDelete($id) {
-        $this->findModel($id)->delete();
+
+        //$this->findModel($id)->delete();
+        $this->findModel($id)->updateAttributes(['visible' => 0]);
 
         return $this->redirect(['index']);
     }
@@ -160,6 +175,66 @@ class BlockyController extends MainController {
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionXls() {
+        $get = Yii::$app->request->get();
+        $searchModel = new BlockySearch();
+        $searchModel->load(Yii::$app->request->get());
+        $dataProvider = $searchModel->searchText(Yii::$app->request->get());
+
+
+        \moonland\phpexcel\Excel::export([
+            'boldHeader' => true,
+            'fileName' => 'blocky',
+            'models' => $dataProvider->getModels(),
+//            'properties' => ["autoSize" => true],
+            'columns' => [
+                [
+                    'header' => 'Interné číslo',
+                    'value' => function($model) {
+                        return $model->intnum;
+                    },
+                ],
+                [
+                    'header' => 'Suma bez DPH',
+                    'value' => function($model) {
+                        return number_format($model->sumabez, 2);
+                    },
+                ],
+                [
+                    'header' => 'DPH',
+                    'value' => function($model) {
+                        return number_format($model->dph, 2);
+                    },
+                ],
+                [
+                    'header' => 'Suma s DPH',
+                    'value' => function($model) {
+                        return number_format($model->sumasdph, 2);
+                    },
+                ],
+                [
+                    'header' => 'Dodávateľ',
+                    'value' => function($model) {
+                        return $model->dodavatel;
+                    },
+                ],                            
+                [
+                    'header' => 'Účel',
+                    'value' => function($model) {
+                        return $model->ucel;
+                    },
+                ],
+
+                [
+                    'header' => 'Dátum',
+                    'value' => function($model) {
+                        return date("d-m-Y", strtotime($model->datum));
+                    },
+                ],
+            ],
+        ]);
     }
 
 }

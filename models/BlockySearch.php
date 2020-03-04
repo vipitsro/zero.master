@@ -12,6 +12,8 @@ use app\models\Blocky;
  */
 class BlockySearch extends Blocky
 {
+    public $year;
+    public $month;
     /**
      * @inheritdoc
      */
@@ -43,7 +45,7 @@ class BlockySearch extends Blocky
      */
     public function search($params)
     {
-        $query = Blocky::find();
+        $query = Blocky::find()->where(["visible"=>"1"]);
 
         // add conditions that should always apply here
 
@@ -76,4 +78,46 @@ class BlockySearch extends Blocky
         
         return $dataProvider;
     }
+
+    public function searchText($params)
+    {
+        $query = Blocky::find()->where(["visible"=>"1"]);
+        if (!is_null($params["BlockySearch"]["year"])):
+            $query->andWhere(["YEAR(added)"=>"".$params["BlockySearch"]["year"].""]);
+        endif;
+        if ($params["BlockySearch"]["month"] != ""):
+            $query->andWhere(["MONTH(added)"=>"".$params["BlockySearch"]["month"].""]);
+        endif;        
+// add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]]
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'sumabez' => $this->sumabez,
+            'dph' => $this->dph,
+            'sumasdph' => $this->sumasdph,
+            'ucel' => $this->ucel,
+            'datum' => $this->datum,
+            'added' => $this->added,
+            'status' => $this->status,
+        ]);
+
+        $query->andFilterWhere(['like', 'file', $this->file]);
+        
+        return $dataProvider;
+    }
+    
 }

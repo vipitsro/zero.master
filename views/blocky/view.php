@@ -2,11 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Blocky */
 
-$this->title = "Bloček číslo ".$model->id;
+$this->title = "Bloček číslo " . $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('supplier_foreign', 'Bločky'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -31,20 +32,23 @@ $this->params['breadcrumbs'][] = $this->title;
     DetailView::widget([
         'model' => $model,
         'attributes' => [
-           // 'id',
+            // 'id',
             'sumabez',
             'dph',
             'sumasdph',
             'ucel',
             [
+                'attribute' => 'datum',
+                'format' => ['date', 'php:d. m. Y']
+            ],
+            [
                 'attribute' => 'file',
                 'label' => 'File',
                 'format' => 'raw',
-                'value' => Html::a('Stiahnuť bloček', "/uploads/blocky/".$model->file, [target => '_blank']),
+                'value' => '<iframe id="fred" style="border:1px solid #666CCC" title="PDF in an i-Frame" src="' . Url::to('@web/uploads/blocky/' . $model->file, true) . '" frameborder="1" scrolling="auto" height="850" width="850" ></iframe>'
             ],
-            'datum',
-            'added',
-           // 'status',
+        //  'added',
+        // 'status',
         ],
     ])
     ?>
