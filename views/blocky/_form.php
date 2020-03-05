@@ -17,9 +17,28 @@ use yii\base\DynamicModel;
     <?php $form = ActiveForm::begin(["options" => ["id" => 'blocky-form', 'enctype' => 'multipart/form-data']]); ?>
     <?= $form->errorSummary($model); ?>
     <div class="row">
+    <div class="col-md-4">
+            <?php 
+            if (!$model->added){
+                $d = Yii::$app->request->get()["year"];
+                $model->added = date("d.m.").$d;
+            }else {
+              
+            }
+            
+            ?>
+            <?= $form->field($model, 'added')->widget(CustomDatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy', "isRTL" => true]); ?>
+        </div>
+        </div>
+    <div class="row">
         <div class="col-md-4">
             <?= $form->field($model, 'sumabez')->textInput() ?>
         </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'intnum')->textInput(['style' => 'color: #000000;font-weight: bold;', 'disabled' => 'true']) ?>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-4">
             <?= $form->field($model, 'dph')->textInput() ?>
         </div>
@@ -40,6 +59,15 @@ use yii\base\DynamicModel;
     </div>
     <div class="row">
         <div class="col-md-4">
+            <?php 
+            if (!$model->datum){
+                $d = Yii::$app->request->get()["year"];
+                $model->datum = date("d.m.").$d;
+            }else {
+              
+            }
+            
+            ?>
             <?= $form->field($model, 'datum')->widget(CustomDatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy', "isRTL" => true]); ?>
         </div>
 

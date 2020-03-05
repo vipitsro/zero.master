@@ -56,7 +56,8 @@ $this->registerJs('
                     "&aktualny_uctovny_rok=" + aktualny_uctovny_rok,
                     function (data) {
                         poradove_cislo_dokladu = data;
-                        $("#invoice-internal_number").val(cislo_firmy + typ_dokladu + aktualny_uctovny_rok + poradove_cislo_dokladu);
+                        var intnum = cislo_firmy + typ_dokladu + aktualny_uctovny_rok + poradove_cislo_dokladu;
+                        $("#invoice-internal_number").val(intnum.replace(/^(.{4})/,"$1-"));
                     });
         }
     </script>
@@ -78,10 +79,10 @@ $this->registerJs('
             <div class="col-md-4">
                 <?php
                 $disabled = [];
-                if (!$model->isNewRecord)
+                /*if (!$model->isNewRecord)*/
                     $disabled['disabled'] = 'true';
                 ?>
-                <?= $form->field($model, 'internal_number')->textInput($disabled) ?>
+                <?= $form->field($model, 'internal_number')->textInput(['style' => 'color: #000000;font-weight: bold;', 'disabled' => 'true'] ) ?>
             </div>
         </div>
         <hr>

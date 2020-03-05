@@ -20,11 +20,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php Pjax::begin([
+    <?php
+    Pjax::begin([
 //        "enablePushState" => false,
 //        "enableReplaceState" => true,
         "timeout" => 3000,
-    ]); ?>
+    ]);
+    ?>
 
     <div class="row">
         <?php
@@ -39,20 +41,21 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($searchModel, 'search_text')->textInput(['onchange' => 'update();']) ?>
         </div>  
         <div class="col-md-2">
-            <?= $form->field($searchModel, 'paid')->dropDownList(["0" => "Všetky", "1" => "Na úhrade", "2" => "Zaplatené", "3" => "Po splatnosti", "4" => "Neuhradené"],['onchange' => 'update();']) ?>
+            <?= $form->field($searchModel, 'paid')->dropDownList(["0" => "Všetky", "1" => "Na úhrade", "2" => "Zaplatené", "3" => "Po splatnosti", "4" => "Neuhradené"], ['onchange' => 'update();']) ?>
         </div>  
         <div class="col-md-2">
-            <?php 
+            <?php
             $supp = [];
-            
             ?>
-            <?= $form->field($searchModel, 'supp')->dropDownList(
-                    [-1 => "Všetci"]+
-                    ["TOP" => \yii\helpers\ArrayHelper::map($suppliers_best, "id", "name"), "OTHER" => \yii\helpers\ArrayHelper::map($suppliers_other, "id", "name")], 
-                ['onchange' => 'update();']) ?>
+            <?=
+            $form->field($searchModel, 'supp')->dropDownList(
+                    [-1 => "Všetci"] +
+                    ["TOP" => \yii\helpers\ArrayHelper::map($suppliers_best, "id", "name"), "OTHER" => \yii\helpers\ArrayHelper::map($suppliers_other, "id", "name")],
+                    ['onchange' => 'update();'])
+            ?>
         </div>  
         <div class="col-md-2">
-            <?= $form->field($searchModel, 'year')->input("number",['onchange' => 'update();']) ?>
+            <?= $form->field($searchModel, 'year')->input("number", ['onchange' => 'update();']) ?>
         </div>  
         <div class="col-md-1" style="padding-top: 25px;">
             <?= Html::img(Url::to(["img/arrow_down.png"]), ["id" => "advanced-search-button", "width" => 30, "height" => 30]) ?>
@@ -63,13 +66,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::button(Yii::t("main", 'XLS'), ['id' => 'generate-xls', 'class' => 'btn btn-primary', 'data-pjax' => 0]) ?>
             </div>
         </div>
-        
+
         <div class="col-md-12 advanced-search" style="height: 1px; overflow: hidden;">
             <?php
-            /*<div class="col-md-4">
-                <?= $form->field($searchModel, 'radio')->inline(true)->radioList(["1" => Yii::t("invoice", "At least one tag"), "2" => Yii::t("invoice", "All tags")], ['separator' => '&nbsp&nbsp&nbsp&nbsp'])->label(Yii::t("main", "Choose")) ?>
-                <?= $form->field($searchModel, 'tags')->inline(true)->checkboxList(app\models\Tag::getList()) ?>
-            </div>*/
+            /* <div class="col-md-4">
+              <?= $form->field($searchModel, 'radio')->inline(true)->radioList(["1" => Yii::t("invoice", "At least one tag"), "2" => Yii::t("invoice", "All tags")], ['separator' => '&nbsp&nbsp&nbsp&nbsp'])->label(Yii::t("main", "Choose")) ?>
+              <?= $form->field($searchModel, 'tags')->inline(true)->checkboxList(app\models\Tag::getList()) ?>
+              </div> */
             ?>
             <div class="col-md-12">
                 <div class="form-group invoice-search-date">
@@ -91,91 +94,90 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="col-md-6">    
                         <?= $form->field($searchModel, 'date_3_to')->inline(true)->widget(DatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy']) ?>       
                     </div>
-<!--                    <div class="col-md-6">
-                        <?= $form->field($searchModel, 'date_4_from')->inline(true)->widget(DatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy']) ?>
-                    </div>
-                    <div class="col-md-6">                
-                        <?= $form->field($searchModel, 'date_4_to')->inline(true)->widget(DatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy']) ?>       
-                    </div>-->
+                    <!--                    <div class="col-md-6">
+                    <?= $form->field($searchModel, 'date_4_from')->inline(true)->widget(DatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy']) ?>
+                                        </div>
+                                        <div class="col-md-6">                
+                    <?= $form->field($searchModel, 'date_4_to')->inline(true)->widget(DatePicker::className(), ['options' => ['class' => 'form-control'], 'language' => 'sk', 'dateFormat' => 'dd.MM.yyyy']) ?>       
+                                        </div>-->
                 </div>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group">
-                <?php 
-                $get = Yii::$app->request->get(); 
+                <?php
+                $get = Yii::$app->request->get();
                 $create_year = ['create'] + (isset($get['InvoiceSearch']['year']) ? ["year" => $get['InvoiceSearch']['year']] : []);
                 ?>
-                <?= Html::a(Yii::t("main", 'Add'), $create_year, ['class' => 'btn btn-success' , 'data-pjax' => 0]) ?>
+                <?= Html::a(Yii::t("main", 'Add'), $create_year, ['class' => 'btn btn-success', 'data-pjax' => 0]) ?>
             </div>
         </div>
 
         <?php ActiveForm::end(); ?>
     </div>
-    
+
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
 //        'filterModel' => $searchModel,
-        'rowOptions' => function($model){
+        'rowOptions' => function($model) {
             $sum_paid = 0;
             $not_paid = 0;
-            
-            foreach($model->invoicePays as $invoicePay){
+
+            foreach ($model->invoicePays as $invoicePay) {
                 if ($invoicePay->paid == 1)
                     $sum_paid += $invoicePay->price;
                 else
                     $not_paid += $invoicePay->price;
             }
-            
-            if (round($model->price + $model->price_vat,2) == round($sum_paid,2)){
+
+            if (round($model->price + $model->price_vat, 2) == round($sum_paid, 2)) {
                 return ['class' => 'uhradene'];
             } else if ($not_paid > 0) {
                 return ['class' => 'nezaplatene-v-baliku'];
-            } else if (round($model->price + $model->price_vat,2) != round($sum_paid,2) && $sum_paid > 0) {
+            } else if (round($model->price + $model->price_vat, 2) != round($sum_paid, 2) && $sum_paid > 0) {
                 return ['class' => 'ciastocne-nezaplatene-v-baliku'];
             } else if (strtotime($model->date_3) < time()) {
                 return ['class' => 'po-datume-splatnosti'];
             }
         },
         'columns' => [
-            
             [
                 'class' => 'yii\grid\ActionColumn',
-                'contentOptions' => function ($model, $key, $index, $column){
+                'contentOptions' => function ($model, $key, $index, $column) {
                     $result = [
                         'style' => 'min-width: 20px;',
                         'width' => 20
                     ];
-                    if ($model->invoiceCarts){
+                    if ($model->invoiceCarts) {
                         $result = ['class' => 'in-invoice-cart'];
                     }
-                    
+
                     return $result;
                 },
                 'buttons' => [
                     'na_uhradu' => function ($url, $model, $key) {
-                        return Html::tag("span", "", ["title" => "Pridať do zoznamu na úhradu", "data-toggle" => "tooltip", "data-delay" => 1000, "data-container" => "body", "class" => "na-pp glyphicon glyphicon-download-alt", "height"=>'20', 'width'=>'20', "style" => "cursor: pointer; margin: 2px; color: #3c8dbc;"]);
+                        return Html::tag("span", "", ["title" => "Pridať do zoznamu na úhradu", "data-toggle" => "tooltip", "data-delay" => 1000, "data-container" => "body", "class" => "na-pp glyphicon glyphicon-download-alt", "height" => '20', 'width' => '20', "style" => "cursor: pointer; margin: 2px; color: #3c8dbc;"]);
                     },
                 ],
-                'template' => '{na_uhradu}', 
+                'template' => '{na_uhradu}',
             ],
-                                    [
-                                        'label' => '',
-                                        'format' => 'raw',
-                                        'value' => function ($model) {
-                                            //$url = "/images/products/" . $data['image'];
-                                            $x = "";
-                                            if ($model->file) {
-                                                $x = " <a data-pjax='0' target='_blank' href='" . Url::to('@web/uploads/' . $model->file, true) . "'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            }
-                                            return $x; 
-                                        },
-                                    ],			
+            [
+                'label' => '',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    //$url = "/images/products/" . $data['image'];
+                    $x = "";
+                    if ($model->file) {
+                        $x = " <a data-pjax='0' target='_blank' href='" . Url::to('@web/uploads/' . $model->file, true) . "'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                    }
+                    return $x;
+                },
+            ],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{update}', 
+                'template' => '{update}',
                 'contentOptions' => [
                     'style' => 'min-width: 20px;',
                     'width' => 20
@@ -183,26 +185,26 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{delete}', 
+                'template' => '{delete}',
                 'contentOptions' => [
                     'style' => 'min-width: 20px;',
                     'width' => 20
                 ],
             ],
             [
-                "value" => function($model){
-                    $cislo = substr($model->internal_number,1,1);
+                "value" => function($model) {
+                    $cislo = substr($model->internal_number, 1, 1);
                     $znak = "";
-                    if (in_array($cislo , [7,8])){
+                    if (in_array($cislo, [7, 8])) {
                         $znak = "<strong>Z </strong>";
                     }
-                    if (in_array($cislo , [6,8])){
+                    if (in_array($cislo, [6, 8])) {
                         $znak .= Html::img(\yii\helpers\Url::to(["img/znak_eu.jpg"]), ["height" => 18]);
                     }
-                    if (in_array($cislo , [5,7])){
+                    if (in_array($cislo, [5, 7])) {
                         $znak .= Html::img(\yii\helpers\Url::to(["img/znak_svk.png"]), ["height" => 18]);
                     }
-                    if ($cislo == 9){
+                    if ($cislo == 9) {
                         $znak .= Html::img(\yii\helpers\Url::to(["img/znak_intern.png"]), ["height" => 18]);
                     }
                     return $znak;
@@ -223,11 +225,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function($model) {
                     return date("d.m.Y", strtotime($model->date_1));
                 },
-            ],				
+                'contentOptions' => [
+                    'style' => 'max-width: 70px;text-align:center;',
+                    'width' => 70,
+                    'class' => 'internal-number'
+                ]
+            ],
             [
                 'attribute' => 'internal_number',
+                'value' => function($model) {
+                    return wordwrap($model->internal_number, 4, '-', true);
+                },
                 'contentOptions' => [
-                    'style' => 'max-width: 70px;',
+                    'style' => 'max-width: 70px;text-align:center;',
                     'width' => 70,
                     'class' => 'internal-number'
                 ]
@@ -246,23 +256,23 @@ $this->params['breadcrumbs'][] = $this->title;
                     'width' => 130
                 ],
             ],
-                                            [
-                                                'attribute' => 'date_2',
-                                                'value' => function($model) {
-                                                    return date("d.m.Y", strtotime($model->date_2));
-                                                },
-                                                'contentOptions' => [
-                                                    'style' => 'min-width: 130px;',
-                                                    'width' => 130
-                                                ],
-                                            ],					
+            [
+                'attribute' => 'date_2',
+                'value' => function($model) {
+                    return date("d.m.Y", strtotime($model->date_2));
+                },
+                'contentOptions' => [
+                    'style' => 'min-width: 130px;text-align:center;',
+                    'width' => 130
+                ],
+            ],
             [
                 'attribute' => 'date_3',
                 'value' => function($model) {
                     return date("d.m.Y", strtotime($model->date_3));
                 },
                 'contentOptions' => [
-                    'style' => 'min-width: 130px;',
+                    'style' => 'min-width: 130px;text-align:center;',
                     'width' => 130
                 ],
             ],
@@ -308,15 +318,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 'header' => Yii::t("invoice", "Price with VAT"),
             ],
             [
-                "value" => function($model){
+                "value" => function($model) {
                     $sum_paid = 0;
 //                    foreach ($model->invoiceBatches as $invoiceBatch){
 //                        if ($invoiceBatch->paid == 1) {
 //                            $sum_paid += $invoiceBatch->price;
 //                        }
 //                    }
-                    
-                    foreach ($model->invoicePays as $invoicePay){
+
+                    foreach ($model->invoicePays as $invoicePay) {
                         if ($invoicePay->paid == 1) {
                             $sum_paid += $invoicePay->price;
                         }
@@ -334,14 +344,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
             [
-                "value" => function($model){
+                "value" => function($model) {
                     $date_paid = "";
 //                    foreach ($model->invoiceBatches as $invoiceBatch){
 //                        if ($invoiceBatch->paid == 1)
 //                            $date_paid .= date("d.m.Y",strtotime($invoiceBatch->date_1))."<br>";
 //                    }
-                    foreach ($model->invoicePays as $invoicePay){
-                        $date_paid .= date("d.m.Y",strtotime($invoicePay->date_payment))."<br>";
+                    foreach ($model->invoicePays as $invoicePay) {
+                        $date_paid .= date("d.m.Y", strtotime($invoicePay->date_payment)) . "<br>";
                     }
                     return $date_paid;
                 },
@@ -357,19 +367,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'header' => 'Uhradiť',
-                'value' => function($model){
-                    
+                'value' => function($model) {
+
                     $sum_paid = 0;
                     $not_paid = 0;
 
-                    foreach($model->invoicePays as $invoicePay){
+                    foreach ($model->invoicePays as $invoicePay) {
                         if ($invoicePay->paid == 1)
                             $sum_paid += $invoicePay->price;
                         else
                             $not_paid += $invoicePay->price;
                     }
 
-                    if (round($model->price + $model->price_vat,2) <> round($sum_paid,2)){
+                    if (round($model->price + $model->price_vat, 2) <> round($sum_paid, 2)) {
                         return Html::button("UHRADIŤ", ['class' => 'btn btn-primary uhradit']);
                     } else {
                         return "";
@@ -381,14 +391,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     'width' => 90
                 ],
             ],
-            //'account_prefix',
-            //'account_number',
-            //'bank_code',
-            //'iban',
-            //'swift',
-            //'vs',
-            //'ks',
-            //'debet_info',
+        //'account_prefix',
+        //'account_number',
+        //'bank_code',
+        //'iban',
+        //'swift',
+        //'vs',
+        //'ks',
+        //'debet_info',
         ],
     ]);
     ?>
@@ -401,11 +411,11 @@ $this->params['breadcrumbs'][] = $this->title;
         padding:2px;
         font-size: 12px;
     }
-    
+
     .invoice-input-name{
         font-weight: bold;
     }
-    
+
     .hababa{
         max-width: 100%;
     }
@@ -414,7 +424,7 @@ $this->params['breadcrumbs'][] = $this->title;
         text-align: center;
         font-weight: bold;
     }
-    
+
     .dialog-form-nove-platby th{
         text-align: center;
         border-radius: 3px;
@@ -423,16 +433,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="form-group" id='dialog-form' hidden>
     <input type="hidden" autofocus="autofocus" />
-    
-    <?php 
+
+    <?php
     $array = [
-        "_typ_dokladu" => "Typ dokladu", 
-        "internal_number" => "Interné číslo", 
-        "supplier" => "Dodávateľ", 
-        "iban" => "IBAN", 
-        "date_1" => "Dátum prijatia", 
-        "date_2" => "Dátum dodania", 
-        "date_3" => "Dátum splatnosti", 
+        "_typ_dokladu" => "Typ dokladu",
+        "internal_number" => "Interné číslo",
+        "supplier" => "Dodávateľ",
+        "iban" => "IBAN",
+        "date_1" => "Dátum prijatia",
+        "date_2" => "Dátum dodania",
+        "date_3" => "Dátum splatnosti",
         "vs" => "Variabilný symbol",
         "price" => "Suma",
         "price_vat" => "DPH",
@@ -440,16 +450,16 @@ $this->params['breadcrumbs'][] = $this->title;
         "suma_s_dph" => "Suma s DPH",
     ];
     ?>
-    
+
     <div class='dialog-form-udaje'>
         <?php
-        foreach($array as $key => $a){
+        foreach ($array as $key => $a) {
             ?>
             <div class="invoice-input-row">
                 <div class="invoice-input-name col-md-5">
-                    <?= $a. ": " ?>
+                    <?= $a . ": " ?>
                 </div>
-                <div class="invoice-input-value col-md-7" id='<?= 'invoice-input-'.$key ?>'>
+                <div class="invoice-input-value col-md-7" id='<?= 'invoice-input-' . $key ?>'>
 
                 </div>
                 <div class='clearfix'></div>
@@ -460,20 +470,20 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <hr>
     <div class='dialog-form-platby'>
-        
-    </div>
-    
-    <hr>
-<!--    <div class="invoice-input-row">
-        <div class="invoice-input-name col-md-5">
-            <?= "Dátum: " ?>
-        </div>
-        <div class="invoice-input-value col-md-7" id='<?= 'invoice-input-'.$key ?>'>
 
-        </div>
-        <div class='clearfix'></div>
-    </div>-->
+    </div>
+
+    <hr>
+    <!--    <div class="invoice-input-row">
+            <div class="invoice-input-name col-md-5">
+    <?= "Dátum: " ?>
+            </div>
+            <div class="invoice-input-value col-md-7" id='<?= 'invoice-input-' . $key ?>'>
     
+            </div>
+            <div class='clearfix'></div>
+        </div>-->
+
     <div class='dialog-form-nove-platby'>
         <table style='width: 100%;'>
             <thead>
@@ -494,7 +504,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?php
                             $typy_platby = app\models\MainModel::getTypyPlatby();
                             unset($typy_platby[100]);
-                            foreach ($typy_platby as $key => $value){
+                            foreach ($typy_platby as $key => $value) {
                                 echo "<option value=" . $key . " >" . $value . "</option>";
                             }
                             ?>
@@ -509,7 +519,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <?php
-
 $this->registerJs('
     function update(){
         document.getElementById("refresh").click();

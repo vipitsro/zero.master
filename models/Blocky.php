@@ -74,8 +74,8 @@ class Blocky extends \yii\db\ActiveRecord
             'dodavatel' => Yii::t('blocky', 'Dodávateľ'),
             'ucel' => Yii::t('blocky', 'Ucel'),
             'file' => Yii::t('blocky', 'File'),
-            'datum' => Yii::t('blocky', 'Datum'),
-            'added' => Yii::t('blocky', 'Added'),
+            'datum' => Yii::t('blocky', 'Dátum dodania'),
+            'added' => Yii::t('blocky', 'Dátum prijatia'),
             'status' => Yii::t('blocky', 'Status'),
         ];
     }

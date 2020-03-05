@@ -51,11 +51,12 @@ use yii\bootstrap\Nav;
                     'encodeLabels' => false,
                     'options' => ['class' => 'sidebar-menu'],
                     'items' => [
-                        '<li class="header">' . $all_settings[array_search('SITE_NAME', array_column($all_settings, 'setting'))]['value'] . " - " . $all_settings[array_search('COMPANY_NAME', array_column($all_settings, 'setting'))]['value'] . '</li>',
+                        '<li class="header">' . wordwrap($all_settings[array_search('SITE_NAME', array_column($all_settings, 'setting'))]['value'], 4, ' ', true) . "<br/>" . $all_settings[array_search('COMPANY_NAME', array_column($all_settings, 'setting'))]['value'] . '</li>',
                         ['label' => '<i class="glyphicon glyphicon-list-alt"></i><span>'.Yii::t("main", "Invoices").'</span>', 'url' => ['/invoice/index']],
-                        ['label' => '<i class="glyphicon glyphicon-list-alt"></i><span>'.Yii::t("main", "Bločky").'</span>', 'url' => ['/blocky/index']],
+                        
                         ['label' => '<i class="glyphicon glyphicon-download-alt"></i><span>'.Yii::t("main", "To pay").'</span>', 'url' => ['/invoice-cart/index']],
                         ['label' => '<i class="glyphicon glyphicon-book"></i><span>'.Yii::t("main", "Batches").'</span>', 'url' => ['/invoice-batch/index']],
+                        ['label' => '<i class="glyphicon glyphicon-list-alt"></i><span>'.Yii::t("main", "Pokladničné doklady").'</span>', 'url' => ['/blocky/index']],
 //                        ['label' => '<i class="glyphicon glyphicon-user"></i><span>'.Yii::t("main", "Suppliers").'</span>', 'url' => ['/supplier/index']],
 //                        ['label' => '<i class="glyphicon glyphicon-lock"></i><span>'.Yii::t("main","Tags").'</span>', 'url' => ['/tag/index']],
 //                        [

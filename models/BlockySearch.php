@@ -82,8 +82,10 @@ class BlockySearch extends Blocky
     public function searchText($params)
     {
         $query = Blocky::find()->where(["visible"=>"1"]);
-        if (!is_null($params["BlockySearch"]["year"])):
+        if ($params["BlockySearch"]["year"] != ""):
             $query->andWhere(["YEAR(added)"=>"".$params["BlockySearch"]["year"].""]);
+        else:
+            $query->andWhere(["YEAR(added)"=>"".date('Y').""]);
         endif;
         if ($params["BlockySearch"]["month"] != ""):
             $query->andWhere(["MONTH(added)"=>"".$params["BlockySearch"]["month"].""]);

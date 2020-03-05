@@ -62,23 +62,29 @@ class BlockyController extends MainController {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
-        Yii::$app->cache->flush();
+    public function actionCreate($year = "") {
+        
+        if ($year == ""){
+            $year = date("Y");
+        }
         $model = new Blocky();
         $system = new Settings();
+        $x = $system->findOne(["setting" => "COMPANY_ID"])->value;
+        $counter = Yii::$app->db->createCommand('SELECT count(*) as pocet FROM blocky where YEAR(datum) =' . $year . '')->queryOne();
+        $counter["pocet"] += 1;
+        $counter["pocet"] = sprintf("%03d", $counter["pocet"]);
+        $model->intnum = $x . "4" . substr($year, -2) . "-" . $counter["pocet"];
+        
         if ($model->load(Yii::$app->request->post())) {
-            $x = $system->findOne(["setting" => "COMPANY_ID"])->value;
-            $counter = Yii::$app->db->createCommand('SELECT count(*) as pocet FROM blocky where YEAR(added) ='.date("Y").'')->queryOne();
-            $counter["pocet"]+=1;
-            $counter["pocet"] = sprintf("%03d", $counter["pocet"]);
-            
-            $model->intnum = $x . "4" . date("y") . "-".$counter["pocet"];
+
+            $model->datum = date("Y-m-d", strtotime($model->datum)) ;
+            $model->added = date("Y-m-d", strtotime($model->added)) ;
 
             $model->file = UploadedFile::getInstance($model, 'file');
 
             $filenameToSave = "";
             if ($model->file) {
-                $filenameToSave = $model->file->baseName . '_' . time();
+                $filenameToSave = $model->intnum."_".$model->file->baseName;
                 $model->file->saveAs('uploads/blocky/' . $filenameToSave . '.' . $model->file->extension);
                 $model->file = $filenameToSave . '.' . $model->file->extension;
             }
@@ -88,7 +94,7 @@ class BlockyController extends MainController {
 
 
             if ($model->save(true)) {
-                return $this->redirect(['index']);
+                return $this->redirect(['index', urldecode('BlockySearch%5Byear%5D') => $year]);
             }
             return $this->render('create', [
                         'model' => $model,
@@ -112,12 +118,15 @@ class BlockyController extends MainController {
         $newfile = UploadedFile::getInstance($model, 'file')->name;
 
         if ($model->load(Yii::$app->request->post())) {
+            
+            $model->datum = date("Y-m-d", strtotime($model->datum)) ;
+            $model->added = date("Y-m-d", strtotime($model->added)) ;
             if (!is_null($newfile)) {
                 $model->file = UploadedFile::getInstance($model, 'file');
 
                 $filenameToSave = "";
                 if ($model->file) {
-                    $filenameToSave = $model->file->baseName . '_' . time();
+                    $filenameToSave = $model->intnum."_".$model->file->baseName;
                     $model->file->saveAs('uploads/blocky/' . $filenameToSave . '.' . $model->file->extension);
                     $model->file = $filenameToSave . '.' . $model->file->extension;
                 }
@@ -130,12 +139,13 @@ class BlockyController extends MainController {
 
             if ($model->save()) {
 
-                return $this->redirect(['index']);
+                return $this->redirect(['index', urldecode('BlockySearch%5Byear%5D') => date("Y", strtotime($model->datum))]);
             } else {
 
                 $model->file = $oldfilename;
                 $model->save();
-                return $this->redirect(['index']);
+;
+                return $this->redirect(['index', urldecode('BlockySearch%5Byear%5D') => date("Y", strtotime($model->datum))]);
             }
 
             return $this->render('update', [
@@ -155,11 +165,10 @@ class BlockyController extends MainController {
      * @return mixed
      */
     public function actionDelete($id) {
-
-        //$this->findModel($id)->delete();
-        $this->findModel($id)->updateAttributes(['visible' => 0]);
-
-        return $this->redirect(['index']);
+        $a = $this->findModel($id);
+        $a->updateAttributes(['visible' => 0]);
+        
+        return $this->redirect(['index', urldecode('BlockySearch%5Byear%5D') => date("Y", strtotime($a->datum))]);
     }
 
     /**
@@ -219,14 +228,13 @@ class BlockyController extends MainController {
                     'value' => function($model) {
                         return $model->dodavatel;
                     },
-                ],                            
+                ],
                 [
                     'header' => 'Účel',
                     'value' => function($model) {
                         return $model->ucel;
                     },
                 ],
-
                 [
                     'header' => 'Dátum',
                     'value' => function($model) {
