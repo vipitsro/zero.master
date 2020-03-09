@@ -206,6 +206,12 @@ class BlockyController extends MainController {
                     },
                 ],
                 [
+                    'attribute' => 'added',
+                    'label' => 'Dátum prijatia',
+                    'format' => ['date', 'php:d. m. Y'],
+
+                ],                            
+                [
                     'header' => 'Suma bez DPH',
                     'value' => function($model) {
                         return number_format($model->sumabez, 2);
@@ -236,7 +242,7 @@ class BlockyController extends MainController {
                     },
                 ],
                 [
-                    'header' => 'Dátum',
+                    'header' => 'Dátum dodania',
                     'value' => function($model) {
                         return date("d-m-Y", strtotime($model->datum));
                     },
