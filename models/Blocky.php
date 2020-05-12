@@ -44,13 +44,17 @@ class Blocky extends \yii\db\ActiveRecord
     }
 
     public function validateSum($attribute)
-    {
-        if ($this->sumabez + $this->dph <> $this->sumasdph):  
+    {   
+        $this->sumabez = floatval($this->sumabez);
+        $this->dph = floatval($this->dph);
+        $this->sumasdph = floatval($this->sumasdph);
+        if (abs($this->sumabez + $this->dph - $this->sumasdph) <  0.00001):  
+            return true;
+        else:    
             $this->addError($attribute, 'Zle zadané sumy !!!');
             return false;
         endif;      
         return true;
-
     }    
     
     public function generateInternalId()

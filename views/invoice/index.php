@@ -228,7 +228,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'contentOptions' => [
                     'style' => 'max-width: 70px;text-align:center;',
                     'width' => 70,
-                    'class' => 'internal-number'
+                    'class' => ''
                 ]
             ],
             [
@@ -541,6 +541,7 @@ $this->registerJs('
     $(document).on("click", ".na-pp", function(){ 
         var _this = $(this);
         var _internal_number = $(this).closest("tr").find(".internal-number").text().trim();
+       _internal_number = _internal_number.replace("-", "");
         $.ajax({
             method : "post",
             url : "../invoice-cart/add",
